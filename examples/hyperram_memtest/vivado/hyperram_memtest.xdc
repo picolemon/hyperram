@@ -1,0 +1,65 @@
+# Example Arty-S7-50 constraints
+
+# clocks
+set_property -dict { PACKAGE_PIN R2    IOSTANDARD SSTL135 } [get_ports { clk_i }];
+create_clock -add -name sys_clk_pin -period 10.000 -waveform {0 5.000}  [get_ports { clk_i }];
+
+# Debug led
+set_property -dict {PACKAGE_PIN E18 IOSTANDARD LVCMOS33} [get_ports {led[0]}]
+set_property -dict {PACKAGE_PIN F13 IOSTANDARD LVCMOS33} [get_ports {led[1]}]
+set_property -dict {PACKAGE_PIN E13 IOSTANDARD LVCMOS33} [get_ports {led[2]}]
+set_property -dict {PACKAGE_PIN H15 IOSTANDARD LVCMOS33} [get_ports {led[3]}]
+
+## USB-UART
+set_property -dict {PACKAGE_PIN R12 IOSTANDARD LVCMOS33} [get_ports uart0_txd_o]
+set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports uart0_rxd_i]
+
+## HyperRAM connected to Arty-S7-50 PMOD PA & PB
+set_property PACKAGE_PIN M18 [get_ports hr_resetn]
+set_property IOSTANDARD LVCMOS33 [get_ports hr_resetn]
+set_property -dict {PACKAGE_PIN L18 IOSTANDARD LVCMOS33} [get_ports hr_csn]
+set_property PACKAGE_PIN M14 [get_ports hr_ck]
+set_property IOSTANDARD LVCMOS33 [get_ports hr_ck]
+set_property SLEW FAST [get_ports hr_ck]
+set_property DRIVE 8 [get_ports hr_ck]
+set_property PACKAGE_PIN N14 [get_ports hr_ckn]
+set_property IOSTANDARD LVCMOS33 [get_ports hr_ckn]
+set_property SLEW FAST [get_ports hr_ckn]
+set_property DRIVE 8 [get_ports hr_ckn]
+set_property PACKAGE_PIN N18 [get_ports hr_rwds]
+set_property IOSTANDARD LVCMOS33 [get_ports hr_rwds]
+set_property SLEW FAST [get_ports hr_rwds]
+set_property DRIVE 8 [get_ports hr_rwds]
+
+set_property PACKAGE_PIN P17 [get_ports {hr_dq[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {hr_dq[0]}]
+set_property SLEW FAST [get_ports {hr_dq[0]}]
+set_property DRIVE 8 [get_ports {hr_dq[0]}]
+set_property PACKAGE_PIN P18 [get_ports {hr_dq[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {hr_dq[1]}]
+set_property SLEW FAST [get_ports {hr_dq[1]}]
+set_property DRIVE 8 [get_ports {hr_dq[1]}]
+set_property PACKAGE_PIN R18 [get_ports {hr_dq[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {hr_dq[2]}]
+set_property SLEW FAST [get_ports {hr_dq[2]}]
+set_property DRIVE 8 [get_ports {hr_dq[2]}]
+set_property PACKAGE_PIN T18 [get_ports {hr_dq[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {hr_dq[3]}]
+set_property SLEW FAST [get_ports {hr_dq[3]}]
+set_property DRIVE 8 [get_ports {hr_dq[3]}]
+set_property PACKAGE_PIN P16 [get_ports {hr_dq[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {hr_dq[4]}]
+set_property SLEW FAST [get_ports {hr_dq[4]}]
+set_property DRIVE 8 [get_ports {hr_dq[4]}]
+set_property PACKAGE_PIN N15 [get_ports {hr_dq[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {hr_dq[5]}]
+set_property SLEW FAST [get_ports {hr_dq[5]}]
+set_property DRIVE 8 [get_ports {hr_dq[5]}]
+set_property PACKAGE_PIN P15 [get_ports {hr_dq[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {hr_dq[6]}]
+set_property SLEW FAST [get_ports {hr_dq[6]}]
+set_property DRIVE 8 [get_ports {hr_dq[6]}]
+set_property PACKAGE_PIN P14 [get_ports {hr_dq[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {hr_dq[7]}]
+set_property SLEW FAST [get_ports {hr_dq[7]}]
+set_property DRIVE 8 [get_ports {hr_dq[7]}]
